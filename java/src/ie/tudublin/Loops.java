@@ -21,7 +21,7 @@ public class Loops extends PApplet {
 	}
 
 	public void mousePressed() {
-		if (type == 1)
+		if (type == 2)
 		{
 			type = 0;
 		}
@@ -71,33 +71,44 @@ public class Loops extends PApplet {
 
 					case 1:
 						fill(0, 255, 0);
+						// Top left 
 						if(mouseX < 250 && mouseY < 250)
 						{
 							rect(0, 0, 250, 250);
 						}
+						// Top Right
 						else if(mouseX > 250 && mouseY < 250)
 						{
 							rect(250, 0, 250, 250);
 						}
+						// Bottom Left
 						else if(mouseX < 250 && mouseY > 250)
 						{
 							rect(0, 250, 250, 250);
 						}
+						// Bottom Right
 						else 
 						{
 							rect(250, 250, 250, 250);
 						}
 						break;
 
+					case 2:
+						if((mouseX >= 125 && mouseX <= 375) && (mouseY >= 200 && mouseY <= 300))
+						{
+							fill(0,0,255);
+							rect(125, 200, 250, 100);
+						}
+						else 
+						{
+							fill(0,255,0);
+							rect(125, 200, 250, 100);
+						}
+						break;
 					default:
 						break;
 				}
 				break;
-
-			case 2:
-
-				break;
-
 			default:
 				break;
 		}
