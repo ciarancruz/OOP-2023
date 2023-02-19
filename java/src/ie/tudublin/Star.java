@@ -31,6 +31,7 @@ public class Star {
 
     public void render(PApplet p)
     {
+        // Places the star on the map
         float border = p.width * 0.1f;
         float x = PApplet.map(xG, -5, 5, border, p.width - border);
         float y = PApplet.map(yG, -5, 5, border, p.height - border);

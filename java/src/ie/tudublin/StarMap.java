@@ -12,7 +12,7 @@ public class StarMap extends PApplet
 
 	public void settings()
 	{
-		size(500, 500);
+		size(800, 800);
 	}
 
 	public void setup() {
@@ -29,7 +29,7 @@ public class StarMap extends PApplet
 	{
 		for(int i = 0 ; i < stars.size() ; i ++)
 		{
-			println(stars.get(i));
+			println(stars.get(i)); //Prints the star stored in index i of the array stars
 		}
 	}
 
@@ -37,17 +37,19 @@ public class StarMap extends PApplet
 	{
 		for(int i = 0 ; i < stars.size() ; i ++)
 		{
-			stars.get(i).render(this);
+			stars.get(i).render(this); //Calls the render function in the Star object
 		}
 	}
 
 	public void loadStars()
 	{
 		Table table = loadTable("HabHYG15ly.csv", "header");
+
+		//Used to fill in Array stars from the csv file
  		for(TableRow r:table.rows())
  		{
- 			Star s = new Star(r);
- 			stars.add(s);
+ 			Star s = new Star(r); //Temporarily stores the star in r into s
+ 			stars.add(s); //It then adds it into the array stars
  		}
 	}
 
@@ -58,7 +60,7 @@ public class StarMap extends PApplet
 
 		for(int i = -5 ; i <= 5 ; i ++)
 		{
-			float x = map(i, -5, 5, border, width - border);
+			float x = map(i, -5, 5, border, width - border); // Used to scale to different types of window sizes i.e not hardcoded
 			line(x, border, x, height - border);
 			line(border, x, width - border, x);
 
