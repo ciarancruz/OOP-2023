@@ -116,7 +116,17 @@ public class Loops extends PApplet {
 				for(int i = 0; i < 500; i += 50)
 				{
 					fill(255, 255, 255);
-					rect(i, 0, i + 50, 500);
+					rect(i, 0, 50, 500);
+				}
+				break;
+			
+			case 3:
+				background(0);
+				stroke(255, 0, 0);
+				for(int i = 0; i < 500; i += 50)
+				{
+					fill(255, 255, 2552);
+					rect(i, i, 50, 50);
 				}
 
 				break;
