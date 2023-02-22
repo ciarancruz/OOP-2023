@@ -25,7 +25,10 @@ public class Cat
             this.numLives--;
             System.out.println("Ouch!");
         }
-        System.out.println("Dead");
+        else{
+            System.out.println("Dead");
+        }
+        
     }
 	
 	public void speak()
