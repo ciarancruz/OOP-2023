@@ -4,7 +4,7 @@ import processing.core.PApplet;
 
 public class BugZap extends PApplet {
 	public void settings() {
-		size(1000, 1000);
+		size(800, 800);
 	}
 
 	public void setup() {
@@ -12,7 +12,7 @@ public class BugZap extends PApplet {
 	}
 
 	float playerX, playerY;
-	float playerSpeed = 5;
+	float playerSpeed = 10;
 	float playerWidth = 40;
 	float halfPlayerWidth = playerWidth / 2;
 
