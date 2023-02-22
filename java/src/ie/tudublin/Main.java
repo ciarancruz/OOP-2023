@@ -14,7 +14,10 @@ public class Main
 		System.out.println("Hello world");
 		
 		Cat ginger = new Cat("Ginger");
-		ginger.kill();
+		for(int i = ginger.getnumLives(); i >= 0; i--)
+		{
+			ginger.kill();
+		}
 
 		
 	}

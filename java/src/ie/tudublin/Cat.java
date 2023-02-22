@@ -4,6 +4,11 @@ public class Cat
 {
 	String name;
     private int numLives = 9;
+
+    public int getnumLives()
+    {
+        return this.numLives;
+    }
 	
 	public void setName(String name)
 	{
