@@ -3,6 +3,7 @@ package ie.tudublin;
 public class Cat
 {
 	String name;
+    private int numLives = 9;
 	
 	public void setName(String name)
 	{
@@ -16,9 +17,19 @@ public class Cat
 	public Cat(String name)
 	{
 	}
+
+    public void kill()
+    {
+        if(this.numLives > 0)
+        {
+            this.numLives--;
+            System.out.println("Ouch!");
+        }
+        System.out.println("Dead");
+    }
 	
 	public void speak()
 	{
-		System.out.println("Woof");
+		System.out.println("Meow");
 	}
 }
