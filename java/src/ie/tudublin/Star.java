@@ -78,6 +78,7 @@ public class Star {
     public float getDistance() {
         return distance;
     }
+    
     public void setHab(boolean hab) {
         this.hab = hab;
     }

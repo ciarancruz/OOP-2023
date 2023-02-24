@@ -74,7 +74,7 @@ public class StarMap extends PApplet
 		
 	}
 
-	float map1(float a, float b, float c, float d, float e)
+	float map1(float a, float b, float c, float d, float e) //How the map function works
 	{
 		float r1 = c -b;
 		float r2 = e - d;
@@ -83,6 +83,34 @@ public class StarMap extends PApplet
 
 		return d + ((howFar / r1) * r2);
 	}
+
+	int star1 = 0;
+	int star2 = 0;
+
+	public void mousePressed()
+	{
+		for (int i = 0; i < stars.size(); i++)
+		{
+			Star star = stars.get(i);
+
+			if (dist(mouseX, mouseY, star.getxG(), star.getyG()) < star.getAbsMag() / 2)
+			{
+				if (star1 == 0) //Puts the first selected star into star1
+				{
+					star1 = i;
+				}
+				else if (star2 == 0) //Puts the second selected star into star2
+				{
+					star2 = i;
+				}
+				else // If both stars are already selected it puts the clicked star into star1 and resets the star2 star
+				{
+					star1 = i;
+					star2 = 0;
+				}
+			}
+		}
+	}
 		
 	public void draw()
 	{	
@@ -90,5 +118,7 @@ public class StarMap extends PApplet
 
 		drawGrid();
 		displayStars();
+
+		
 	}
 }
