@@ -53,6 +53,7 @@ public class StarMap extends PApplet
  		}
 	}
 
+	
 	public void drawGrid()
 	{
 		stroke(0, 255, 255);
@@ -92,16 +93,18 @@ public class StarMap extends PApplet
 		for (int i = 0; i < stars.size(); i++)
 		{
 			Star star = stars.get(i);
-
+			System.out.println(dist(mouseX, mouseY, star.getxG(), star.getyG()));
 			if (dist(mouseX, mouseY, star.getxG(), star.getyG()) < star.getAbsMag() / 2)
 			{
 				if (star1 == 0) //Puts the first selected star into star1
 				{
 					star1 = i;
+					System.out.println("Selected 1");
 				}
 				else if (star2 == 0) //Puts the second selected star into star2
 				{
 					star2 = i;
+					System.out.println("Selected 2");
 				}
 				else // If both stars are already selected it puts the clicked star into star1 and resets the star2 star
 				{
@@ -114,11 +117,27 @@ public class StarMap extends PApplet
 		
 	public void draw()
 	{	
+		float border = width * 0.1f;
 		strokeWeight(1);		
 
 		drawGrid();
 		displayStars();
 
-		
+		if (star1 != 0 && star2 == 0)
+		{
+			Star selected1 = stars.get(star1);
+			stroke(0, 0, 255);
+			line(selected1.getxG(), selected1.getyG(), mouseX, mouseY);
+		}
+		else if (star1 != 0 && star2 != 0)
+		{
+			Star selected1 = stars.get(star1);
+			Star selected2 = stars.get(star2);
+			stroke(0, 0, 255);
+			line(selected1.getxG(), selected1.getyG(), selected2.getxG(), selected2.getyG());
+			fill(255);
+			float dist = dist(selected1.getxG(), selected1.getyG(), selected1.getzG(), selected2.getxG(), selected2.getyG(), selected2.getzG());
+    		text("Distance from " + selected1.getDisplayName() + " to " + selected2.getDisplayName() + " is " + dist + " parsecs", border, height - 25 );
+		}
 	}
 }
