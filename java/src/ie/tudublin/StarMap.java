@@ -86,7 +86,7 @@ public class StarMap extends PApplet
 	}
 
 	int star1 = 7;
-	int star2 = 0;
+	int star2 = 2;
 
 	// public void mousePressed()
 	// {
