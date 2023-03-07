@@ -127,7 +127,7 @@ public class BugZap extends PApplet {
 		else
 		{
 			textAlign(CENTER, CENTER);
-			text("GAME OVER!!!", width / 2, height / 2);
+			text("GAME OVER! YOU HAVE LOST!", width / 2, height / 2);
 		}
 
 		if (bugY > height - 50)
