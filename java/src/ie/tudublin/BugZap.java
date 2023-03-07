@@ -34,7 +34,7 @@ public class BugZap extends PApplet {
 
 	void drawBug(float x, float y) {
 		// Draw the bug
-		stroke(255);
+		stroke(255, 0, 0);
 		float saucerHeight = bugWidth * 0.7f;
 		line(x, y - saucerHeight, x - halfBugWidth, y);
 		line(x, y - saucerHeight, x + halfBugWidth, y);
