@@ -13,7 +13,7 @@ public class BugZap extends PApplet {
 
 	float playerX, playerY;
 	float playerSpeed = 10;
-	float playerWidth = 40;
+	float playerWidth = 90;
 	float halfPlayerWidth = playerWidth / 2;
 
 	float bugX, bugY, bugWidth = 100;
