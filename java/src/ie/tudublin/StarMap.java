@@ -85,35 +85,35 @@ public class StarMap extends PApplet
 		return d + ((howFar / r1) * r2);
 	}
 
-	int star1 = 0;
+	int star1 = 7;
 	int star2 = 0;
 
-	public void mousePressed()
-	{
-		for (int i = 0; i < stars.size(); i++)
-		{
-			Star star = stars.get(i);
-			System.out.println(dist(mouseX, mouseY, star.getxG(), star.getyG()));
-			if (dist(mouseX, mouseY, star.getxG(), star.getyG()) < star.getAbsMag() / 2)
-			{
-				if (star1 == 0) //Puts the first selected star into star1
-				{
-					star1 = i;
-					System.out.println("Selected 1");
-				}
-				else if (star2 == 0) //Puts the second selected star into star2
-				{
-					star2 = i;
-					System.out.println("Selected 2");
-				}
-				else // If both stars are already selected it puts the clicked star into star1 and resets the star2 star
-				{
-					star1 = i;
-					star2 = 0;
-				}
-			}
-		}
-	}
+	// public void mousePressed()
+	// {
+	// 	for (int i = 0; i < stars.size(); i++)
+	// 	{
+	// 		Star star = stars.get(i);
+	// 		System.out.println("Star selected " + star.getDisplayName());
+	// 		if (dist(mouseX, mouseY, star.getxG(), star.getyG()) < star.getAbsMag())
+	// 		{
+	// 			if (star1 == 0) //Puts the first selected star into star1
+	// 			{
+	// 				star1 = i;
+	// 				System.out.println("Selected 1");
+	// 			}
+	// 			else if (star2 == 0) //Puts the second selected star into star2
+	// 			{
+	// 				star2 = i;
+	// 				System.out.println("Selected 2");
+	// 			}
+	// 			else // If both stars are already selected it puts the clicked star into star1 and resets the star2 star
+	// 			{
+	// 				star1 = i;
+	// 				star2 = 0;
+	// 			}
+	// 		}
+	// 	}
+	// }
 		
 	public void draw()
 	{	
@@ -126,7 +126,7 @@ public class StarMap extends PApplet
 		if (star1 != 0 && star2 == 0)
 		{
 			Star selected1 = stars.get(star1);
-			stroke(0, 0, 255);
+			stroke(0, 255, 255);
 			line(selected1.getxG(), selected1.getyG(), mouseX, mouseY);
 		}
 		else if (star1 != 0 && star2 != 0)
