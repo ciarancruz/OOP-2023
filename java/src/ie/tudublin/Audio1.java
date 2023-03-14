@@ -123,32 +123,27 @@ public class Audio1 extends PApplet
             case 3:
                 background(0);
                 stroke(255);
+                strokeWeight(3);
                 fill(0);
-                float f = 0;
-                for(int i = 0; i < ab.size(); i++)
-                {
-                    f = lerpedBuffer[i] * halfH * 20.0f;
-                }
-                circle(width / 2, height / 2, f);
+                circle(width / 2, height / 2, smoothedAmplitude * 2000);
                 break;
-                
-
         }
 
 
         
         // Other examples we made in the class
-        /*
-        stroke(255);
-        fill(100, 255, 255);        
+        // background(0);
+        // stroke(255);
+        // fill(100, 255, 255);        
         
-        circle(width / 2, halfH, lerpedA * 100);
+        // circle(width / 2, halfH, smoothedAmplitude * 100);
 
-        circle(100, y, 50);
-        y += random(-10, 10);
-        smoothedY = lerp(smoothedY, y, 0.1f);        
-        circle(200, smoothedY, 50);
-        */
+        // circle(100, y, 50);
+        // y += random(-10, 10);
+        // smoothedY = lerp(smoothedY, y, 0.8f);        
+        // circle(200, smoothedY, 50);
+        
+        
 
     }        
 }
