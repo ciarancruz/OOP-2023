@@ -110,8 +110,8 @@ public class Audio1 extends PApplet
                 background(0);
                 for(int i = 0 ; i < ab.size() ; i ++)
                 {
-                    float c = map(i, 0, ab.size(), mouseX /2, mouseY/ 2);
-                    stroke(c, 255, 255);
+                    float c = map(i, 0, ab.size(), mouseX /2, mouseY/ 2); 
+                    stroke(c, 255, 255);    //Changes color depending on where the mouse is
                     float f = lerpedBuffer[i] * halfH * 4.0f;
                     line(0, i, f, i);              
                     line(width, i, width - f, i);              
@@ -122,7 +122,17 @@ public class Audio1 extends PApplet
                 
             case 3:
                 background(0);
+                stroke(255);
+                fill(0);
+                float f = 0;
+                for(int i = 0; i < ab.size(); i++)
+                {
+                    f = lerpedBuffer[i] * halfH * 20.0f;
+                }
+                circle(width / 2, height / 2, f);
+                break;
                 
+
         }
 
 
