@@ -127,6 +127,14 @@ public class Audio1 extends PApplet
                 fill(0);
                 circle(width / 2, height / 2, smoothedAmplitude * 2000);
                 break;
+
+            case 4:
+                background(0);
+                stroke(255);
+                strokeWeight(3);
+                fill(0);
+                rectMode(CENTER);
+                rect(width / 2, height / 2, 400, 200);
         }
 
 
