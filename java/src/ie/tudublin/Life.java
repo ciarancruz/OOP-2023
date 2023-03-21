@@ -7,6 +7,7 @@ public class Life extends PApplet
 
 	LifeBoard board;
 	boolean pause = false;
+	boolean clear = false;
 
 
 	public void settings()
@@ -40,9 +41,22 @@ public class Life extends PApplet
 			pause = !pause;
 		}
 
-		if (key == 49)
+		if (key == 49) //ASCII for 1
 		{
 			board.randomise();
+		}
+
+		if (key == 50) //ASCII for 2
+		{
+			clear = !clear;
+			if (clear == true)
+			{
+				board.clearBoard();
+			}
+			else
+			{
+				board.randomise();
+			}
 		}
 	}
 }
