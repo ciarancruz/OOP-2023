@@ -25,7 +25,7 @@ public class Life extends PApplet
 	{	
 		background(0);
 		board.render();
-		
+
 		if (pause == false)
 		{
 			board.applyRules();
@@ -38,6 +38,11 @@ public class Life extends PApplet
 		if (key == ' ')
 		{
 			pause = !pause;
+		}
+
+		if (key == 49)
+		{
+			board.randomise();
 		}
 	}
 }
